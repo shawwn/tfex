@@ -16,3 +16,6 @@ test: all
 
 testpypi: clean build
 	@python3 -m twine upload --repository testpypi dist/*
+
+testinstall:
+	@(cd ../.. ; python3 -m pip install -U --index-url https://test.pypi.org/simple/ --no-deps tfex)
